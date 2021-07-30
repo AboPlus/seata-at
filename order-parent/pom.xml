@@ -61,22 +61,24 @@
             <artifactId>druid-spring-boot-starter</artifactId>
             <version>${druid-spring-boot-starter.version}</version>
         </dependency>
-        <!--<dependency>-->
-        <!--  <groupId>com.alibaba.cloud</groupId>-->
-        <!--  <artifactId>spring-cloud-alibaba-seata</artifactId>-->
-        <!--  <version>${spring-cloud-alibaba-seata.version}</version>-->
-        <!--  <exclusions>-->
-        <!--    <exclusion>-->
-        <!--      <artifactId>seata-all</artifactId>-->
-        <!--      <groupId>io.seata</groupId>-->
-        <!--    </exclusion>-->
-        <!--  </exclusions>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-        <!--  <groupId>io.seata</groupId>-->
-        <!--  <artifactId>seata-all</artifactId>-->
-        <!--  <version>${seata.version}</version>-->
-        <!--</dependency>-->
+
+        <dependency>
+          <groupId>com.alibaba.cloud</groupId>
+          <artifactId>spring-cloud-alibaba-seata</artifactId>
+          <version>${spring-cloud-alibaba-seata.version}</version>
+          <exclusions>
+            <exclusion>
+              <artifactId>seata-all</artifactId>
+              <groupId>io.seata</groupId>
+            </exclusion>
+          </exclusions>
+        </dependency>
+        <dependency>
+          <groupId>io.seata</groupId>
+          <artifactId>seata-all</artifactId>
+          <version>${seata.version}</version>
+        </dependency>
+
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
@@ -111,6 +113,7 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>2.3.2.RELEASE</version>
             </plugin>
         </plugins>
     </build>

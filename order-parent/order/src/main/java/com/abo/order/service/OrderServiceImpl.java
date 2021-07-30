@@ -5,8 +5,11 @@ import com.abo.order.feign.AccountClient;
 import com.abo.order.feign.EasyIdClient;
 import com.abo.order.feign.StorageClient;
 import com.abo.order.mapper.OrderMapper;
+import io.seata.spring.annotation.GlobalLock;
+import io.seata.spring.annotation.GlobalTransactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Random;
 
@@ -26,6 +29,8 @@ public class OrderServiceImpl implements OrderService {
     private StorageClient storageClient;
 
 
+    @GlobalTransactional
+    @Transactional
     @Override
     public void create(Order order) {
         // 调用发号器获取订单id
